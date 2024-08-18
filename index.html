@@ -29,10 +29,11 @@
         }
 
         .profile-pic {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             margin-right: 15px;
+            border: 2px solid #fff;
         }
 
         nav {
@@ -62,9 +63,28 @@
             margin-bottom: 20px;
         }
 
-        .section img, .section video {
-            max-width: 100%;
+        .section img {
+            width: 40%;
             height: auto;
+            max-width: 600px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .section img:hover {
+            transform: scale(1.5);
+        }
+
+        .section video {
+            width: 60%;
+            height: auto;
+            max-width: 600px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .section video:hover {
+            transform: scale(1.5);
         }
 
         .contact-info {
@@ -88,7 +108,7 @@
 <body>
 
 <header>
-    <h1><img src="https://github.com/twinson-k/twinson/blob/main/20220702_152625.jpg?raw=true" class="profile-pic" alt="Kworekwa Twinson"> Kworekwa Twinson - Construction Engineering and Management</h1>
+    <h1><img src="https://github.com/twinson-k/twinson/blob/main/247407ff0e054515ad906e2e0190ce60.jpg?raw=true" class="profile-pic" alt="Kworekwa Twinson"> Kworekwa Twinson - Construction Engineering and Management</h1>
 </header>
 
 <nav>
@@ -102,13 +122,14 @@
 <div class="content">
     <div class="section" id="images">
         <h2>Images</h2>
+        <!-- Updated image URLs with reduced size -->
         <img src="https://github.com/twinson-k/twinson/blob/main/20220702_152622.jpg?raw=true" alt="Construction Image 1">
-        <img src="https://github.com/twinson-k/twinson/blob/main/247407ff0e054515ad906e2e0190ce60.jpg?raw=true" alt="Construction Image 2">
-        <img src="https://github.com/twinson-k/twinson/blob/main/20220702_152625.jpg?raw=true" alt="Construction Image 3">
+        <img src="https://github.com/twinson-k/twinson/blob/main/20220702_152625.jpg?raw=true" alt="Construction Image 2">
     </div>
 
     <div class="section" id="videos">
         <h2>Videos</h2>
+        <!-- Add your videos here -->
         <video controls>
             <source src="https://github.com/twinson-k/twinson/blob/main/video1.mp4?raw=true" type="video/mp4">
             Your browser does not support the video tag.
@@ -121,13 +142,14 @@
 
     <div class="section" id="articles">
         <h2>Articles</h2>
-        <article>
-            <h3><a href="#building-foundations">Building Foundations in Clayish Soils</a></h3>
+        <!-- Articles added here -->
+        <article id="building-foundations">
+            <h3>Building Foundations in Clayish Soils</h3>
             <p>Building on clayish soils presents unique challenges due to the soil’s tendency to expand and contract with moisture changes. Proper site analysis and foundation design are crucial to mitigate potential problems such as shifting or settling. Techniques such as soil stabilization, deep foundations, and careful drainage management can help address these issues effectively.</p>
             <p><strong>Author:</strong> Kworekwa Twinson</p>
         </article>
-        <article>
-            <h3><a href="#groundwater-contamination">Ground Water Contamination and Its Impacts</a></h3>
+        <article id="groundwater-contamination">
+            <h3>Ground Water Contamination and Its Impacts</h3>
             <p>Groundwater contamination can occur from various sources, including industrial spills, agricultural runoff, and improper waste disposal. Contaminants such as heavy metals, pesticides, and organic chemicals can compromise water quality and pose serious health risks. Addressing contamination involves rigorous monitoring, remediation strategies, and regulatory measures to protect public health and the environment.</p>
             <p><strong>Author:</strong> Kworekwa Twinson</p>
         </article>
