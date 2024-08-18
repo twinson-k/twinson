@@ -3,11 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kworekwa Twinson - Expert in Construction Engineering and Management, specializing in water and sanitation projects.">
-    <meta name="keywords" content="Construction, Engineering, Water, Sanitation, Project Management, Kworekwa Twinson">
-    <meta name="author" content="Kworekwa Twinson">
     <title>Kworekwa Twinson - Construction Engineering and Management</title>
-    <link rel="icon" href="https://github.com/twinson-k/twinson/blob/main/favicon.ico?raw=true" type="image/x-icon">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -125,24 +121,38 @@
             margin: 10px 0;
         }
 
+        .social-media {
+            margin-top: 20px;
+        }
+
+        .social-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 5px;
+            color: #fff;
+            background-color: #1da1f2; /* Twitter blue */
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-button.twitter {
+            background-color: #1da1f2; /* Twitter blue */
+        }
+
+        .social-button.facebook {
+            background-color: #3b5998; /* Facebook blue */
+        }
+
+        .social-button:hover {
+            background-color: #0c85d0; /* Darker blue for hover effect */
+        }
+
         .downloads a {
             display: block;
             margin: 5px 0;
             color: #0066cc;
-        }
-
-        .social-media a {
-            margin: 0 10px;
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.2em;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 600px) {
-            nav {
-                flex-direction: column;
-            }
         }
     </style>
 </head>
@@ -200,8 +210,8 @@
 
     <div class="section" id="downloads">
         <h2>Downloads</h2>
-        <div class="downloads" id="download-links">
-            <!-- Download links are dynamically generated if files exist -->
+        <div class="downloads">
+            <!-- Download links will be generated here dynamically -->
         </div>
     </div>
 </div>
@@ -211,8 +221,8 @@
     <p>Phone: +256789378797</p>
     <p>Email: <a href="mailto:twinsonwork@gmail.com" style="color: #fff;">twinsonwork@gmail.com</a></p>
     <div class="social-media">
-        <a href="https://twitter.com/twino_k" target="_blank">Twitter</a> | 
-        <a href="https://facebook.com/Kworekwa Twinso" target="_blank">Facebook</a>
+        <a href="https://twitter.com/twino_k" target="_blank" class="social-button twitter">Click here for Twitter</a>
+        <a href="https://facebook.com/KworekwaTwins" target="_blank" class="social-button facebook">Click here for Facebook</a>
     </div>
 </div>
 
@@ -240,14 +250,31 @@
 
     document.addEventListener('DOMContentLoaded', () => {
         showSlide(currentIndex);
-        loadDownloads();
-    });
 
-    function loadDownloads() {
+        // Files available for download
         const files = [
-            {name: 'Example Image', url: 'https://github.com/twinson-k/twinson/blob/main/example.jpg?raw=true'},
-            {name: 'Example PDF', url: 'https://github.com/twinson-k/twinson/blob/main/example.pdf?raw=true'},
-            {name: 'Example DOC', url: 'https://github.com/twinson-k/twinson/blob/main/example.docx?raw=true'},
-            {name: 'Example Excel', url: 'https://github.com/twinson-k/twinson/blob/main/example.xlsx?raw=true'},
-            {name: 'Example Text', url: 'https://github.com/twinson-k/twinson/blob/main/example.txt?raw=true'},
-            {name: 'Example DWG', url: 'https://github.com/twin
+            { name: 'example.jpg', link: 'https://github.com/twinson-k/twinson/blob/main/example.jpg?raw=true' },
+            { name: 'example.pdf', link: 'https://github.com/twinson-k/twinson/blob/main/example.pdf?raw=true' },
+            { name: 'example.docx', link: 'https://github.com/twinson-k/twinson/blob/main/example.docx?raw=true' },
+            { name: 'example.xlsx', link: 'https://github.com/twinson-k/twinson/blob/main/example.xlsx?raw=true' },
+            { name: 'example.txt', link: 'https://github.com/twinson-k/twinson/blob/main/example.txt?raw=true' },
+            { name: 'example.dwg', link: 'https://github.com/twinson-k/twinson/blob/main/example.dwg?raw=true' },
+            { name: 'example.zip', link: 'https://github.com/twinson-k/twinson/blob/main/example.zip?raw=true' }
+        ];
+
+        const downloadContainer = document.querySelector('.downloads');
+
+        // Populate the download links if files are available
+        if (files.length > 0) {
+            files.forEach(file => {
+                const link = document.createElement('a');
+                link.href = file.link;
+                link.textContent = `Download ${file.name}`;
+                downloadContainer.appendChild(link);
+            });
+        }
+    });
+</script>
+
+</body>
+</html>
