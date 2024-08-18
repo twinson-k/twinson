@@ -77,6 +77,8 @@
         .carousel-image {
             min-width: 100%;
             transition: transform 0.5s ease;
+            max-height: 400px; /* Adjust height as needed */
+            object-fit: cover; /* Keeps aspect ratio */
         }
 
         .carousel-button {
@@ -146,4 +148,85 @@
         <div class="carousel">
             <div class="carousel-images">
                 <img src="https://github.com/twinson-k/twinson/blob/main/20220702_152622.jpg?raw=true" class="carousel-image" alt="Construction Image 1">
-                <img src="https://github.com/twinson-k/twinson/blob/main/20220702_152625.jpg?raw=true" class="carousel
+                <img src="https://github.com/twinson-k/twinson/blob/main/20220702_152625.jpg?raw=true" class="carousel-image" alt="Construction Image 2">
+            </div>
+            <a class="carousel-button left" onclick="prevSlide()">&#10094;</a>
+            <a class="carousel-button right" onclick="nextSlide()">&#10095;</a>
+        </div>
+    </div>
+
+    <div class="section" id="videos">
+        <h2>Videos</h2>
+        <!-- Add your videos here -->
+        <video controls>
+            <source src="https://github.com/twinson-k/twinson/blob/main/video1.mp4?raw=true" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video controls>
+            <source src="https://github.com/twinson-k/twinson/blob/main/video2.mp4?raw=true" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="section" id="articles">
+        <h2>Articles</h2>
+        <article>
+            <h3><a href="building-foundations.html">Building Foundations in Clayish Soils</a></h3>
+            <p>This article discusses the challenges and solutions for building foundations on clayish soils. <a href="building-foundations.html">Read more...</a></p>
+        </article>
+        <article>
+            <h3><a href="groundwater-contamination.html">Ground Water Contamination and Its Impacts</a></h3>
+            <p>This article explores the causes and effects of groundwater contamination. <a href="groundwater-contamination.html">Read more...</a></p>
+        </article>
+    </div>
+
+    <div class="section" id="downloads">
+        <h2>Downloads</h2>
+        <div class="downloads">
+            <h3>File Types:</h3>
+            <a href="https://github.com/twinson-k/twinson/blob/main/example.jpg?raw=true" download>Download Image</a>
+            <a href="https://github.com/twinson-k/twinson/blob/main/example.pdf?raw=true" download>Download PDF</a>
+            <a href="https://github.com/twinson-k/twinson/blob/main/example.docx?raw=true" download>Download DOC</a>
+            <a href="https://github.com/twinson-k/twinson/blob/main/example.xlsx?raw=true" download>Download Excel</a>
+            <a href="https://github.com/twinson-k/twinson/blob/main/example.txt?raw=true" download>Download Text</a>
+            <a href="https://github.com/twinson-k/twinson/blob/main/example.dwg?raw=true" download>Download DWG</a>
+            <a href="https://github.com/twinson-k/twinson/blob/main/example.mpp?raw=true" download>Download MS Project</a>
+        </div>
+    </div>
+</div>
+
+<div class="contact-info" id="contact">
+    <h2>Contact Me</h2>
+    <p>Phone: +256789378797</p>
+    <p>Email: <a href="mailto:twinsonwork@gmail.com" style="color: #fff;">twinsonwork@gmail.com</a></p>
+</div>
+
+<script>
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        const slides = document.querySelectorAll('.carousel-image');
+        if (index >= slides.length) currentIndex = 0;
+        if (index < 0) currentIndex = slides.length - 1;
+        slides.forEach((slide, i) => {
+            slide.style.transform = `translateX(${-currentIndex * 100}%)`;
+        });
+    }
+
+    function nextSlide() {
+        currentIndex++;
+        showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+        currentIndex--;
+        showSlide(currentIndex);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        showSlide(currentIndex);
+    });
+</script>
+
+</body>
+</html>
